@@ -1,0 +1,324 @@
+.footer {
+  background-color: #201416;
+  color: #EDE3DC;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Quote Hero Banner */
+.footer-hero-quote {
+  background: linear-gradient(180deg, var(--color-burgundy-dark) 0%, #291217 100%);
+  padding: 4.5rem 0 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(212, 154, 61, 0.15) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .quote-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #D49A3D;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+
+  .quote-title {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #FAF5EF;
+    max-width: 800px;
+    margin: 0 auto 1.25rem;
+    line-height: 1.25;
+
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+
+  .quote-sub {
+    font-size: 1.12rem;
+    color: #E2D1C8;
+    max-width: 680px;
+    margin: 0 auto 2.25rem;
+    line-height: 1.6;
+  }
+
+  .quote-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .btn-outline {
+      border-color: #FAF5EF;
+      color: #FAF5EF;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Main Footer */
+.footer-main {
+  padding: 4.5rem 0 3.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+    gap: 3rem;
+  }
+}
+
+/* Col 1: Brand */
+.brand-col {
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+
+    .brand-symbol {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .footer-brand-name {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #FAF5EF;
+      line-height: 1.1;
+    }
+
+    .footer-brand-sub {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #C0B0A8;
+    }
+  }
+
+  .brand-description {
+    font-size: 0.95rem;
+    color: #BFB2AC;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .school-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.85rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-pill);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #EADCD4;
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      background: #D49A3D;
+      border-radius: 50%;
+    }
+  }
+}
+
+/* Link Columns */
+.footer-col-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FAF5EF;
+  margin-bottom: 1.25rem;
+  position: relative;
+  letter-spacing: -0.01em;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-burgundy-light);
+    margin-top: 0.45rem;
+    border-radius: 2px;
+  }
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+
+  a {
+    color: #B5A7A0;
+    font-size: 0.94rem;
+    transition: all var(--transition-fast);
+
+    &:hover {
+      color: #FAF5EF;
+      padding-left: 4px;
+    }
+  }
+}
+
+/* Col 4: Newsletter */
+.newsletter-col {
+  .newsletter-sub {
+    font-size: 0.92rem;
+    color: #B5A7A0;
+    margin-bottom: 1.2rem;
+  }
+
+  .newsletter-form {
+    margin-bottom: 1.5rem;
+
+    .input-group {
+      display: flex;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius-pill);
+      padding: 0.3rem 0.3rem 0.3rem 1.1rem;
+      transition: border-color var(--transition-fast);
+
+      &:focus-within {
+        border-color: #D49A3D;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      input {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #FAF5EF;
+        font-size: 0.92rem;
+        flex: 1;
+
+        &::placeholder {
+          color: #9E8F88;
+        }
+      }
+
+      .newsletter-btn {
+        background: var(--color-burgundy);
+        border: none;
+        color: #FFFFFF;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background var(--transition-fast);
+
+        &:hover {
+          background: var(--color-burgundy-light);
+        }
+      }
+    }
+
+    .newsletter-alert {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: #79D498;
+      font-weight: 500;
+    }
+  }
+
+  .support-channels {
+    font-size: 0.88rem;
+    color: #B5A7A0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    .support-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #9E8F88;
+    }
+
+    .support-email {
+      color: #D49A3D;
+      font-weight: 600;
+
+      &:hover {
+        color: #FAF5EF;
+      }
+    }
+  }
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 1.5rem 0;
+  font-size: 0.84rem;
+  color: #9E8F88;
+
+  .footer-bottom-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  .copyright strong {
+    color: #E0D3CD;
+  }
+
+  .disclaimer {
+    font-size: 0.8rem;
+    color: #92837C;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      text-align: right;
+    }
+  }
+}

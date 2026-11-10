@@ -1,0 +1,113 @@
+<div class="how-it-works-page">
+  <!-- Hero -->
+  <header class="page-hero">
+    <div class="container text-center">
+      <span class="section-badge">
+        <span class="dot"></span>
+        04 • HOW IT WORKS
+      </span>
+      <h1 class="page-title">From First Contact to a Growth Plan</h1>
+      <p class="page-subtitle mx-auto">
+        Every business receives support based on its own products, customers and goals. Here is the exact path we walk with you from day one.
+      </p>
+    </div>
+  </header>
+
+  <!-- 5-Step Process Section -->
+  <section class="section steps-section">
+    <div class="container">
+      <div class="process-timeline">
+        @for (step of steps; track step.num) {
+          <div class="timeline-row">
+            <div class="timeline-badge-col">
+              <div class="num-circle">{{ step.num }}</div>
+            </div>
+            <div class="timeline-content-col">
+              <div class="pdf-card step-box">
+                <div class="step-header">
+                  <span class="step-eyebrow">PHASE {{ step.num }}</span>
+                  <h2 class="step-title">{{ step.title }}</h2>
+                  <p class="step-lead">{{ step.lead }}</p>
+                </div>
+                <p class="step-desc">{{ step.details }}</p>
+                <div class="step-outcome">
+                  <span class="outcome-label">Deliverable:</span>
+                  <span class="outcome-text">{{ step.deliverable }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Formal Disclaimer from PDF Slide 05 -->
+      <div class="disclaimer-callout">
+        <span class="icon">ℹ️</span>
+        <p>
+          <strong>Official Note:</strong> WE CARE supports implementation; business results depend on many factors and are not guaranteed.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study Breakdown (Slide 06 & 07) -->
+  <section class="section case-study-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">
+          <span class="dot"></span>
+          06 • CASE STUDY
+        </span>
+        <h2 class="section-title">How WE CARE Helps a New Snack Stall</h2>
+        <p class="section-subtitle mx-auto">
+          Real demonstration: an entrepreneur wanting to sell fresh fruit drinks at a local event.
+        </p>
+      </div>
+
+      <div class="case-study-grid">
+        @for (phase of caseStudyPhases; track phase.phase) {
+          <div class="pdf-card case-study-card">
+            <span class="phase-badge">{{ phase.phase }}</span>
+            <h3 class="phase-headline">{{ phase.headline }}</h3>
+            <ul class="phase-list">
+              @for (point of phase.points; track point) {
+                <li>
+                  <span class="dot">✓</span>
+                  <span>{{ point }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+
+      <!-- Adaptability Matrix (Slide 07) -->
+      <div class="adapt-box">
+        <div class="adapt-header text-center">
+          <h3>One Method, Countless Possibilities</h3>
+          <p>This is one example. WE CARE can adapt its support to clothing, food, crafts, services and other small businesses.</p>
+        </div>
+
+        <div class="sectors-grid">
+          @for (s of adaptabilitySectors; track s.name) {
+            <div class="sector-card">
+              <h4>{{ s.name }}</h4>
+              <p>{{ s.desc }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section text-center">
+    <div class="container">
+      <div class="cta-box">
+        <h2 class="cta-title">Ready to begin Step 01?</h2>
+        <p class="cta-desc">Fill out our simple contact form and our team will get in touch within 24 hours.</p>
+        <a routerLink="/contact" class="btn btn-primary btn-lg">Contact WE CARE &rarr;</a>
+      </div>
+    </div>
+  </section>
+</div>

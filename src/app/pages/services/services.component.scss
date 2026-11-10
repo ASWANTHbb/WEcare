@@ -1,0 +1,323 @@
+.services-page {
+  background-color: var(--color-cream-bg);
+}
+
+.page-hero {
+  background: linear-gradient(180deg, var(--color-cream-surface) 0%, var(--color-cream-bg) 100%);
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid var(--color-cream-border);
+
+  .page-title {
+    font-size: 2.75rem;
+    color: var(--color-burgundy);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+
+    @media (min-width: 768px) {
+      font-size: 3.5rem;
+    }
+  }
+
+  .page-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    max-width: 720px;
+    line-height: 1.65;
+    margin-bottom: 2.25rem;
+  }
+
+  .filter-pills {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+
+    .filter-btn {
+      background: #FFFFFF;
+      border: 1.5px solid var(--color-cream-border);
+      border-radius: var(--radius-pill);
+      padding: 0.55rem 1.25rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+
+      &:hover {
+        border-color: var(--color-burgundy);
+        color: var(--color-burgundy);
+      }
+
+      &.active {
+        background: var(--color-burgundy);
+        border-color: var(--color-burgundy);
+        color: #FFFFFF;
+        box-shadow: 0 4px 12px rgba(107, 29, 47, 0.25);
+      }
+    }
+  }
+}
+
+.section {
+  padding: 5rem 0;
+
+  @media (max-width: 768px) {
+    padding: 3.5rem 0;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Service Detail Rows */
+.service-details-section {
+  background-color: var(--color-cream-bg);
+}
+
+.services-vertical-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.service-detail-row {
+  padding: 2.5rem;
+
+  .row-header {
+    border-bottom: 1px solid var(--color-cream-border);
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+
+    .index-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-burgundy);
+      background: var(--color-burgundy-subtle);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-pill);
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-name {
+      font-size: 1.85rem;
+      color: var(--color-burgundy);
+      margin-bottom: 0.4rem;
+    }
+
+    .service-sum {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+  }
+
+  .row-content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1.5fr 1fr;
+    }
+
+    .col-heading {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-burgundy);
+      display: block;
+      margin-bottom: 0.85rem;
+    }
+
+    .deliv-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+
+      li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.65rem;
+        font-size: 0.95rem;
+        color: var(--color-text-main);
+
+        .bullet {
+          color: #248A49;
+          font-weight: 800;
+        }
+      }
+    }
+
+    .tools-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+
+      .tool-tag {
+        background: var(--color-cream-surface);
+        border: 1px solid var(--color-cream-border);
+        border-radius: var(--radius-pill);
+        padding: 0.35rem 0.85rem;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--color-text-muted);
+      }
+    }
+  }
+}
+
+/* Stall Guide */
+.stall-guide-section {
+  background-color: var(--color-cream-surface);
+}
+
+.stall-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stall-step-box {
+    background: #FFFFFF;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-cream-border);
+    border-left: 4px solid var(--color-burgundy);
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .num-tag {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: rgba(107, 29, 47, 0.35);
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: var(--color-burgundy);
+      margin-bottom: 0.45rem;
+    }
+
+    p {
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+}
+
+.safety-box {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-cream-border);
+  border-left: 5px solid #C9882B;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-sm);
+
+  .safety-icon {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.15rem;
+    color: var(--color-burgundy);
+    margin-bottom: 0.2rem;
+  }
+
+  p {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+}
+
+/* Packages */
+.service-pricing-section {
+  background-color: var(--color-cream-bg);
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+
+  @media (min-width: 960px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .package-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &.featured {
+      border-left-color: #C9882B;
+      background: #FFFDF9;
+      transform: translateY(-4px);
+    }
+
+    .pop-pill {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: #C9882B;
+      color: #FFFFFF;
+      padding: 0.2rem 0.65rem;
+      border-radius: var(--radius-pill);
+    }
+
+    .pkg-type {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-burgundy);
+      background: var(--color-burgundy-subtle);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-pill);
+      display: inline-block;
+      margin-bottom: 0.85rem;
+    }
+
+    .pkg-detail {
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+      margin: 1.25rem 0 2rem;
+      line-height: 1.55;
+    }
+
+    .btn-block {
+      width: 100%;
+      margin-top: auto;
+    }
+  }
+}

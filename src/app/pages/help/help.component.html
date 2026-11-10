@@ -1,0 +1,104 @@
+<div class="help-page">
+  <!-- Header -->
+  <header class="page-hero">
+    <div class="container text-center">
+      <span class="section-badge">
+        <span class="dot"></span>
+        KNOWLEDGE & ASSISTANCE
+      </span>
+      <h1 class="page-title">WE CARE Help Center</h1>
+      <p class="page-subtitle mx-auto">
+        Find quick answers, practical startup guides, and direct assistance to help your business take flight.
+      </p>
+
+      <!-- Search Bar -->
+      <div class="search-wrap">
+        <div class="search-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input 
+            type="text" 
+            [ngModel]="searchQuery()" 
+            (ngModelChange)="searchQuery.set($event)" 
+            placeholder="Type your question (e.g. permit, pricing, stall, AI tools)..." />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Startup Guides -->
+  <section class="section guides-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">
+          <span class="dot"></span>
+          FREE RESOURCES
+        </span>
+        <h2 class="section-title">Practical Startup Knowledge Base</h2>
+        <p class="section-subtitle mx-auto">
+          Short, actionable guides designed for first-time founders, stall owners, and student entrepreneurs.
+        </p>
+      </div>
+
+      <div class="guides-grid">
+        @for (guide of quickGuides; track guide.title) {
+          <div class="pdf-card guide-card">
+            <div class="guide-meta">
+              <span class="guide-tag">{{ guide.category | uppercase }}</span>
+              <span class="guide-time">{{ guide.readTime }}</span>
+            </div>
+            <h3 class="card-title">{{ guide.title }}</h3>
+            <p class="card-desc">{{ guide.summary }}</p>
+            <div class="guide-footer">
+              <span class="read-link">Read Blueprint &rarr;</span>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="section faq-list-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">
+          <span class="dot"></span>
+          FREQUENTLY ASKED
+        </span>
+        <h2 class="section-title">Common Questions Answered</h2>
+      </div>
+
+      <div class="faq-container">
+        @for (item of filteredFaqs(); track item.q) {
+          <div class="faq-card" [class.open]="item.open">
+            <button type="button" class="faq-btn" (click)="toggleFaq(item)">
+              <span>{{ item.q }}</span>
+              <span class="sym">{{ item.open ? '−' : '+' }}</span>
+            </button>
+            @if (item.open) {
+              <div class="faq-body animate-fade-in">
+                <p>{{ item.a }}</p>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Direct Help Hub Box -->
+  <section class="section direct-help-section">
+    <div class="container">
+      <div class="help-box">
+        <div class="help-text">
+          <span class="help-eyebrow">CAN'T FIND WHAT YOU NEED?</span>
+          <h2>Speak Directly With a WE CARE Advisor</h2>
+          <p>We are here to support your startup journey. Send us a message and our advisors will provide one-on-one guidance.</p>
+        </div>
+        <div class="help-action">
+          <a routerLink="/contact" class="btn btn-primary btn-lg">Contact WE CARE Team &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

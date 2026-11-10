@@ -1,0 +1,317 @@
+/* ==========================================================================
+   WE CARE - Design System & Global Styles
+   Matching PDF Palette: Burgundy (#6B1D2F) & Warm Cream (#FAF5EF)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* PDF Exact Color Palette */
+  --color-burgundy: #6B1D2F;
+  --color-burgundy-dark: #4A121F;
+  --color-burgundy-light: #8E2B43;
+  --color-burgundy-hover: #561524;
+  --color-burgundy-subtle: #F6EAEC;
+  --color-burgundy-tint: rgba(107, 29, 47, 0.08);
+
+  /* Cream / Sand / Ivory Neutrals from PDF */
+  --color-cream-bg: #FAF5EF;
+  --color-cream-card: #FFFFFF;
+  --color-cream-surface: #F5EFE6;
+  --color-cream-alt: #EFE6D9;
+  --color-cream-border: #E8DCCF;
+
+  /* Typography Colors */
+  --color-text-main: #241C1D;
+  --color-text-muted: #625557;
+  --color-text-light: #8D7E80;
+  --color-text-burgundy: #6B1D2F;
+
+  /* Accent highlights */
+  --color-gold: #C9882B;
+  --color-gold-light: #F7EBD8;
+  --color-success: #2A7E4F;
+  --color-success-bg: #EAF6EE;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(107, 29, 47, 0.04);
+  --shadow-md: 0 8px 24px rgba(107, 29, 47, 0.07);
+  --shadow-lg: 0 16px 40px rgba(107, 29, 47, 0.1);
+  --shadow-hover: 0 20px 48px rgba(107, 29, 47, 0.14);
+
+  /* Borders & Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.18s ease;
+  --transition-base: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Fonts */
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Global Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream-bg);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-burgundy);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+p {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* PDF Section Badge / Eyebrow */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.825rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-burgundy);
+  margin-bottom: 0.75rem;
+  padding: 0.35rem 0.85rem;
+  background-color: var(--color-burgundy-subtle);
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(107, 29, 47, 0.12);
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-burgundy);
+    border-radius: 50%;
+    display: inline-block;
+  }
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-burgundy);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+
+  @media (min-width: 768px) {
+    font-size: 2.75rem;
+  }
+}
+
+.section-subtitle {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  max-width: 720px;
+  margin-bottom: 2.5rem;
+}
+
+/* PDF Signature Card Style (White card with maroon left accent border) */
+.pdf-card {
+  background: var(--color-cream-card);
+  border-left: 4.5px solid var(--color-burgundy);
+  border-radius: var(--radius-md);
+  padding: 1.85rem 1.65rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--color-burgundy-light);
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-burgundy);
+    margin-bottom: 0.5rem;
+  }
+
+  .card-desc {
+    font-size: 0.98rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.65rem;
+  font-weight: 600;
+  font-size: 0.975rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+
+  &.btn-primary {
+    background-color: var(--color-burgundy);
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(107, 29, 47, 0.25);
+
+    &:hover {
+      background-color: var(--color-burgundy-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(107, 29, 47, 0.35);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &.btn-outline {
+    background-color: transparent;
+    color: var(--color-burgundy);
+    border: 1.5px solid var(--color-burgundy);
+
+    &:hover {
+      background-color: var(--color-burgundy-subtle);
+      border-color: var(--color-burgundy-hover);
+      color: var(--color-burgundy-hover);
+      transform: translateY(-2px);
+    }
+  }
+
+  &.btn-secondary {
+    background-color: #FFFFFF;
+    color: var(--color-burgundy);
+    border: 1px solid var(--color-cream-border);
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+      background-color: var(--color-cream-surface);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+  }
+
+  &.btn-lg {
+    padding: 0.95rem 2.15rem;
+    font-size: 1.05rem;
+  }
+
+  &.btn-sm {
+    padding: 0.45rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.floating-element {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #D5C2B4;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-burgundy-light);
+}

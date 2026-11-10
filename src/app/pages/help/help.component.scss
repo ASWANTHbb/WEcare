@@ -1,0 +1,230 @@
+.help-page {
+  background-color: var(--color-cream-bg);
+}
+
+.page-hero {
+  background: linear-gradient(180deg, var(--color-cream-surface) 0%, var(--color-cream-bg) 100%);
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid var(--color-cream-border);
+
+  .page-title {
+    font-size: 2.75rem;
+    color: var(--color-burgundy);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+
+    @media (min-width: 768px) {
+      font-size: 3.5rem;
+    }
+  }
+
+  .page-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    max-width: 720px;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+
+  .search-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #FFFFFF;
+      border: 1.5px solid var(--color-cream-border);
+      border-radius: var(--radius-pill);
+      padding: 0.75rem 1.4rem;
+      box-shadow: var(--shadow-sm);
+      color: var(--color-burgundy);
+
+      input {
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: 1rem;
+        color: var(--color-text-main);
+
+        &::placeholder {
+          color: #A39691;
+        }
+      }
+    }
+  }
+}
+
+.section {
+  padding: 5rem 0;
+
+  @media (max-width: 768px) {
+    padding: 3.5rem 0;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Guides */
+.guides-section {
+  background-color: var(--color-cream-bg);
+}
+
+.guides-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.guide-card {
+  display: flex;
+  flex-direction: column;
+
+  .guide-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .guide-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--color-burgundy);
+      background: var(--color-burgundy-subtle);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.08em;
+    }
+
+    .guide-time {
+      font-size: 0.8rem;
+      color: var(--color-text-light);
+    }
+  }
+
+  .guide-footer {
+    margin-top: auto;
+    padding-top: 1.25rem;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-burgundy);
+  }
+}
+
+/* FAQs */
+.faq-list-section {
+  background-color: var(--color-cream-surface);
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .faq-card {
+    background: #FFFFFF;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-cream-border);
+    overflow: hidden;
+    transition: all var(--transition-fast);
+
+    &.open {
+      border-color: var(--color-burgundy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-btn {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      padding: 1.25rem 1.5rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-burgundy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+
+      .sym {
+        font-size: 1.4rem;
+        line-height: 1;
+        color: var(--color-burgundy);
+      }
+    }
+
+    .faq-body {
+      padding: 0 1.5rem 1.25rem;
+      font-size: 0.98rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      border-top: 1px solid rgba(107, 29, 47, 0.06);
+      margin-top: -0.25rem;
+      padding-top: 0.75rem;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* Help Box */
+.direct-help-section {
+  background-color: var(--color-cream-bg);
+
+  .help-box {
+    background: #FFFFFF;
+    border-radius: var(--radius-xl);
+    border: 1.5px solid var(--color-burgundy);
+    padding: 3.5rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    box-shadow: var(--shadow-md);
+
+    .help-text {
+      flex: 1;
+      min-width: 300px;
+
+      .help-eyebrow {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: var(--color-burgundy);
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        color: var(--color-burgundy);
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 1.05rem;
+        color: var(--color-text-muted);
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<div class="quiz-container">
+  @if (!showResult()) {
+    <div class="quiz-card animate-fade-in">
+      <div class="quiz-progress-bar">
+        <div class="progress-fill" [style.width.%]="((currentStep() + 1) / questions.length) * 100"></div>
+      </div>
+
+      <div class="quiz-header">
+        <div class="step-indicator">Step {{ currentStep() + 1 }} of {{ questions.length }}</div>
+        <h3 class="question-title">{{ questions[currentStep()].title }}</h3>
+        <p class="question-subtitle">{{ questions[currentStep()].subtitle }}</p>
+      </div>
+
+      <div class="options-grid">
+        @for (opt of questions[currentStep()].options; track opt.text; let i = $index) {
+          <button 
+            type="button" 
+            class="quiz-option-card"
+            [class.selected]="selectedAnswers()[currentStep()] === i"
+            (click)="selectOption(i)">
+            <div class="option-icon-wrap">
+              @if (opt.icon === 'store') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              } @else if (opt.icon === 'laptop') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line></svg>
+              } @else if (opt.icon === 'box') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+              } @else if (opt.icon === 'cpu') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+              } @else if (opt.icon === 'palette') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2z"></path></svg>
+              } @else if (opt.icon === 'users') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              } @else if (opt.icon === 'zap') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              } @else if (opt.icon === 'trending-up') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              } @else if (opt.icon === 'rocket') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+              } @else {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              }
+            </div>
+            <div class="option-content">
+              <span class="option-title">{{ opt.text }}</span>
+              <span class="option-sub">{{ opt.sub }}</span>
+            </div>
+          </button>
+        }
+      </div>
+
+      <div class="quiz-nav">
+        @if (currentStep() > 0) {
+          <button type="button" class="btn btn-secondary btn-sm" (click)="prevStep()">
+            &larr; Previous Step
+          </button>
+        }
+      </div>
+    </div>
+  } @else {
+    <!-- Diagnostic Result View -->
+    <div class="quiz-result-card animate-fade-in">
+      <span class="result-badge">{{ getRecommendation().badge }}</span>
+      <h3 class="result-title">{{ getRecommendation().title }}</h3>
+      <span class="result-pillar">{{ getRecommendation().pillar }}</span>
+      <p class="result-desc">{{ getRecommendation().desc }}</p>
+
+      <div class="action-buttons">
+        <a routerLink="/contact" class="btn btn-primary btn-lg">
+          Discuss This Plan With WE CARE &rarr;
+        </a>
+        <button type="button" class="btn btn-outline" (click)="resetQuiz()">
+          Retake Assessment
+        </button>
+      </div>
+    </div>
+  }
+</div>

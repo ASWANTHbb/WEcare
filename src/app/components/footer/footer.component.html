@@ -1,0 +1,122 @@
+<footer class="footer">
+  <!-- Top Quote Banner (From Slide 9) -->
+  <div class="footer-hero-quote">
+    <div class="container text-center">
+      <span class="quote-eyebrow">08 • OUR PURPOSE</span>
+      <h2 class="quote-title">"Your idea matters. Let's build it with care."</h2>
+      <p class="quote-sub">
+        WE CARE brings technology, AI tools, business strategy, marketing and practical startup support together in one place.
+      </p>
+      <div class="quote-action">
+        <a routerLink="/contact" class="btn btn-primary btn-lg">Start Your Startup Journey</a>
+        <a routerLink="/help" class="btn btn-outline btn-lg">Browse Help Center</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Footer Content -->
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-col brand-col">
+          <div class="footer-brand">
+            <div class="brand-symbol">
+              <svg viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="15" fill="#6B1D2F" />
+                <path d="M10 11L16 23L22 11" stroke="#FAF5EF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 11V18" stroke="#D49A3D" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="16" cy="7" r="1.5" fill="#FAF5EF" />
+              </svg>
+            </div>
+            <div>
+              <span class="footer-brand-name">WE CARE</span>
+              <span class="footer-brand-sub">Startup Support Partner</span>
+            </div>
+          </div>
+          <p class="brand-description">
+            We help entrepreneurs turn business ideas into practical action using AI, technology, marketing and business strategy.
+          </p>
+          <div class="school-badge">
+            <span class="dot"></span>
+            <span>School Startup Project Initiative</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Navigation</h4>
+          <ul class="footer-links">
+            <li><a routerLink="/">Home Overview</a></li>
+            <li><a routerLink="/about">About Us & Problem</a></li>
+            <li><a routerLink="/services">6 Core Services</a></li>
+            <li><a routerLink="/how-it-works">How It Works (5 Steps)</a></li>
+            <li><a routerLink="/services" fragment="stall-setup">Pop-up & Stall Setup</a></li>
+            <li><a routerLink="/contact">Get in Touch</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">What We Help With</h4>
+          <ul class="footer-links">
+            <li><a routerLink="/services">AI & Technology Tools</a></li>
+            <li><a routerLink="/services">Business Strategy & Pricing</a></li>
+            <li><a routerLink="/services">Marketing & Promotions</a></li>
+            <li><a routerLink="/services">Branding, Logo & Banners</a></li>
+            <li><a routerLink="/services">Online Catalogs & Web</a></li>
+            <li><a routerLink="/services">Simple Business Records</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter & Contact -->
+        <div class="footer-col newsletter-col">
+          <h4 class="footer-col-title">Stay Inspired</h4>
+          <p class="newsletter-sub">
+            Get practical guides, tools, and startup advice delivered right to your inbox.
+          </p>
+
+          <form (submit)="subscribeNewsletter()" class="newsletter-form">
+            <div class="input-group">
+              <input 
+                type="email" 
+                [(ngModel)]="newsletterEmail" 
+                name="newsletterEmail" 
+                placeholder="Enter your email address" 
+                required 
+                aria-label="Email for newsletter" />
+              <button type="submit" class="newsletter-btn" aria-label="Subscribe">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </div>
+            @if (newsletterSuccess()) {
+              <div class="newsletter-alert animate-fade-in">
+                ✓ Thank you! We've received your email. Let's build together!
+              </div>
+            }
+          </form>
+
+          <div class="support-channels">
+            <span class="support-label">Support Inquiries:</span>
+            <a href="mailto:support@wecarestartup.org" class="support-email">support&#64;wecarestartup.org</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Legal & Disclaimer -->
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <div class="copyright">
+        &copy; {{ currentYear }} <strong>WE CARE</strong>. School Startup Project. All rights reserved.
+      </div>
+      <div class="disclaimer">
+        <em>Note:</em> WE CARE supports implementation; business results depend on many factors and are not guaranteed.
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,55 @@
+<div class="contact-page">
+  <!-- Header -->
+  <header class="page-hero">
+    <div class="container text-center">
+      <span class="section-badge">
+        <span class="dot"></span>
+        GET IN TOUCH
+      </span>
+      <h1 class="page-title">Let's Build Your Startup With Care</h1>
+      <p class="page-subtitle mx-auto">
+        Whether you have a brand new concept or need help growing an active stall, tell us about your business below. Our team is ready to help you plan the next steps.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Contact Section -->
+  <section class="section main-contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Col 1: Details & Guarantees -->
+        <div class="info-sidebar">
+          <div class="pdf-card info-card">
+            <span class="sidebar-badge">PRESENTED BY WE CARE</span>
+            <h3 class="sidebar-title">Your Dedicated Startup Partner</h3>
+            <p class="sidebar-desc">
+              "We help entrepreneurs turn business ideas into practical action using AI, technology, marketing and business strategy."
+            </p>
+
+            <div class="sidebar-channels">
+              @for (item of officeDetails; track item.title) {
+                <div class="channel-row">
+                  <span class="ch-title">{{ item.title }}</span>
+                  <span class="ch-detail">{{ item.detail }}</span>
+                  <span class="ch-sub">{{ item.sub }}</span>
+                </div>
+              }
+            </div>
+
+            <div class="sidebar-promise">
+              <span class="promise-tag">OUR PROMISE</span>
+              <p>
+                Clear scope, honest pricing, and practical guidance. Your ideas remain strictly confidential.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: The Required Contact Form -->
+        <div class="form-container-col">
+          <app-contact-form></app-contact-form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

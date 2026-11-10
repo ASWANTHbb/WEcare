@@ -1,0 +1,196 @@
+<div class="services-page">
+  <!-- Header -->
+  <header class="page-hero">
+    <div class="container text-center">
+      <span class="section-badge">
+        <span class="dot"></span>
+        03 • OUR SERVICES
+      </span>
+      <h1 class="page-title">What Our Team Can Help With</h1>
+      <p class="page-subtitle mx-auto">
+        Choose individual services or bundle them into a comprehensive launch package. We adapt our support to your exact goals, timeline, and budget.
+      </p>
+
+      <div class="filter-pills">
+        <button 
+          type="button" 
+          class="filter-btn" 
+          [class.active]="selectedCategory() === 'all'" 
+          (click)="setCategory('all')">
+          All Services (6 Pillars)
+        </button>
+        <button 
+          type="button" 
+          class="filter-btn" 
+          [class.active]="selectedCategory() === 'digital'" 
+          (click)="setCategory('digital')">
+          AI & Digital Tools
+        </button>
+        <button 
+          type="button" 
+          class="filter-btn" 
+          [class.active]="selectedCategory() === 'strategy'" 
+          (click)="setCategory('strategy')">
+          Strategy & Management
+        </button>
+        <button 
+          type="button" 
+          class="filter-btn" 
+          [class.active]="selectedCategory() === 'stall'" 
+          (click)="setCategory('stall')">
+          Pop-up & Stall Essentials
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Detailed Services Grid -->
+  <section class="section service-details-section">
+    <div class="container">
+      <div class="services-vertical-list">
+        @for (s of filteredServices(); track s.index) {
+          <div class="pdf-card service-detail-row">
+            <div class="row-header">
+              <div class="index-pill">PILLAR {{ s.index }}</div>
+              <h2 class="service-name">{{ s.title }}</h2>
+              <p class="service-sum">{{ s.summary }}</p>
+            </div>
+
+            <div class="row-content-grid">
+              <div class="deliverables-col">
+                <span class="col-heading">Concrete Deliverables You Receive:</span>
+                <ul class="deliv-list">
+                  @for (deliv of s.deliverables; track deliv) {
+                    <li>
+                      <span class="bullet">✓</span>
+                      <span>{{ deliv }}</span>
+                    </li>
+                  }
+                </ul>
+              </div>
+
+              <div class="tools-col">
+                <span class="col-heading">Practical Tools Integrated:</span>
+                <div class="tools-tags">
+                  @for (t of s.tools; track t) {
+                    <span class="tool-tag">{{ t }}</span>
+                  }
+                </div>
+                <div class="action-wrap">
+                  <a routerLink="/contact" class="btn btn-primary btn-sm">Inquire About This Pillar &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Stall Setup In-Depth Guide (Slide 05 & 06) -->
+  <section id="stall-setup" class="section stall-guide-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">
+          <span class="dot"></span>
+          05 • PRACTICAL STARTUP SUPPORT
+        </span>
+        <h2 class="section-title">Pop-up & Small Stall Launch Checklist</h2>
+        <p class="section-subtitle mx-auto">
+          Want to test your recipe, fashion accessory, or handcrafted item in person? We help entrepreneurs start small stalls step-by-step.
+        </p>
+      </div>
+
+      <div class="stall-steps-grid">
+        <div class="stall-step-box">
+          <div class="num-tag">01</div>
+          <h3>Choose the product</h3>
+          <p>Understand the product, target customers and demand before committing money.</p>
+        </div>
+        <div class="stall-step-box">
+          <div class="num-tag">02</div>
+          <h3>Plan the stall</h3>
+          <p>Decide the stall layout, display, equipment and location needs for maximum footfall.</p>
+        </div>
+        <div class="stall-step-box">
+          <div class="num-tag">03</div>
+          <h3>Prepare the brand</h3>
+          <p>Create a catchy name, logo, banner, menu or price list that looks professional.</p>
+        </div>
+        <div class="stall-step-box">
+          <div class="num-tag">04</div>
+          <h3>Plan costs and pricing</h3>
+          <p>Estimate product cost, selling price and basic budget to guarantee profit.</p>
+        </div>
+        <div class="stall-step-box">
+          <div class="num-tag">05</div>
+          <h3>Promote and take orders</h3>
+          <p>Product photos, social posts and WhatsApp Business contact to collect pre-orders.</p>
+        </div>
+        <div class="stall-step-box">
+          <div class="num-tag">06</div>
+          <h3>Track and improve</h3>
+          <p>Record sales, collect feedback and improve the offer for your next pop-up.</p>
+        </div>
+      </div>
+
+      <div class="safety-box">
+        <div class="safety-icon">🛡️</div>
+        <div>
+          <h4>Local Permissions & Safety Guidance</h4>
+          <p>We can also help the owner check local permissions and safety requirements before opening.</p>
+        </div>
+        <a routerLink="/contact" class="btn btn-outline btn-sm">Request Permit Checklist</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Packages Summary (Slide 08) -->
+  <section class="section service-pricing-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">
+          <span class="dot"></span>
+          07 • BUSINESS MODEL
+        </span>
+        <h2 class="section-title">Transparent Service Packages</h2>
+        <p class="section-subtitle mx-auto">
+          Pricing can be based on the work required, time and materials. The scope and cost are agreed before work begins.
+        </p>
+      </div>
+
+      <div class="packages-grid">
+        <div class="pdf-card package-card">
+          <div class="package-head">
+            <span class="pkg-type">Option 01</span>
+            <h3 class="card-title">One-time service fee</h3>
+            <p class="card-desc">For a logo, banner, business plan or digital setup.</p>
+          </div>
+          <p class="pkg-detail">Best when you need one clean deliverable done right without monthly commitments.</p>
+          <a routerLink="/contact" class="btn btn-outline btn-block">Choose One-Time</a>
+        </div>
+
+        <div class="pdf-card package-card featured">
+          <div class="pop-pill">RECOMMENDED</div>
+          <div class="package-head">
+            <span class="pkg-type">Option 02</span>
+            <h3 class="card-title">Monthly support plan</h3>
+            <p class="card-desc">For regular marketing, content and business guidance.</p>
+          </div>
+          <p class="pkg-detail">Ideal for growing startups who want continuous advice, social posts, and optimization.</p>
+          <a routerLink="/contact" class="btn btn-primary btn-block">Choose Monthly Plan</a>
+        </div>
+
+        <div class="pdf-card package-card">
+          <div class="package-head">
+            <span class="pkg-type">Option 03</span>
+            <h3 class="card-title">Startup / stall package</h3>
+            <p class="card-desc">For product launch planning, stall branding and promotion.</p>
+          </div>
+          <p class="pkg-detail">Full end-to-end support taking you from raw idea to open booth on event day.</p>
+          <a routerLink="/contact" class="btn btn-outline btn-block">Choose Stall Package</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
